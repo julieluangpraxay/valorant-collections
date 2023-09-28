@@ -1,0 +1,9 @@
+@media only screen and (min-width: 375px) {
+  .carousel-wrapper {
+    flex-basis: 100%;
+  }
+
+  .logo {
+    flex-basis: 30%;
+  }
+}

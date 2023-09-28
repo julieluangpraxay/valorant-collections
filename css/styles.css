@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  background-color: #f7dad9;
+  border-bottom: solid black 3px;
+}
+
+.logo {
+  width: 12%;
+  margin: 1rem 0;
+}
+
+img {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.carousel-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
+.carousel {
+  margin-top: 1rem;
+}
+
+.hidden {
+  display: none;
+}
