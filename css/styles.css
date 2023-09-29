@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  font-family: Dongle, sans-serif;
 }
 
 header {
@@ -9,9 +10,15 @@ header {
   border-bottom: solid black 3px;
 }
 
+body {
+  background-image: linear-gradient(white, white, white, #88dbff);
+  height: 100vh;
+}
+
 .logo {
-  width: 12%;
-  margin: 1rem 0;
+  width: 50%;
+  margin: 0.3rem 0;
+  height: 15%;
 }
 
 img {
@@ -28,6 +35,8 @@ img {
   display: flex;
   justify-content: center;
   width: 90%;
+  height: 100px;
+  margin-bottom: 1.5rem;
 }
 
 .carousel {
@@ -36,4 +45,98 @@ img {
 
 .hidden {
   display: none;
+}
+
+.mobile-nav {
+  background-color: #f7dad9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 3px solid black;
+  padding: 1rem;
+
+  /* display: none; */
+}
+
+i {
+  color: #c15b75;
+  width: 100%;
+  display: flex;
+  line-height: normal;
+}
+
+.fa-magnifying-glass {
+  align-items: center;
+  justify-content: center;
+}
+
+.search {
+  width: 250px;
+  border-radius: 0.5rem;
+  border-style: hidden;
+  border: none;
+  padding: 0.3rem 0;
+  font-size: 25px;
+  text-decoration: none;
+  height: 2rem;
+  margin-left: 1rem;
+}
+
+.search:hover {
+  cursor: pointer;
+}
+
+.search:focus {
+  outline: none;
+}
+
+.search-wrapper {
+  padding-left: 1rem;
+  background-color: white;
+  border: solid 2px black;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  padding: 0.5rem;
+  background-color: #87bbe1;
+  border: 3px solid black;
+  border-radius: 1rem;
+}
+
+.spray-icon {
+  background-color: #f7dad9;
+  border: 3px solid black;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+  border-radius: 1rem;
+}
+
+.spray-name {
+  border-radius: 1rem;
+  border: 3px solid black;
+  background-color: #fdeaac;
+  text-align: center;
+  width: 100%;
+  align-items: center;
+  font-size: 25px;
+  margin-top: 1rem;
+}
+
+.text-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }

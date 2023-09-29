@@ -1,9 +1,29 @@
 @media only screen and (min-width: 375px) {
   .carousel-wrapper {
-    flex-basis: 100%;
+    flex-basis: 70%;
   }
 
   .logo {
     flex-basis: 30%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .carousel-wrapper {
+    flex-basis: 50%;
+  }
+
+  .logo {
+    flex-basis: 20%;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .carousel-wrapper {
+    flex-basis: 40%;
+  }
+
+  .logo {
+    flex-basis: 10%;
   }
 }
