@@ -68,9 +68,36 @@ function getSkinsData(name) {
 
 getSkinsData();
 
-// $const $searchBar = document.querySelector('search');
+const $row = document.querySelector('.row');
+const $columnThird = document.createElement('div');
+const $cardWrapper = document.createElement('div');
+const $iconImage = document.createElement('img');
+const $textWrapper = document.createElement('div');
+const $sprayTitle = document.createElement('p');
+const $searchBar = document.querySelector('.search');
 
-// $searchBar.addEventListener('input', )
-// function searchSprays() {
+$searchBar.addEventListener('input', searchSprays);
 
-// }
+function searchSprays() {
+  event.preventDefault();
+  const searchSkin = $searchBar.value;
+  for (let i = 0; i < data.sprays.length; i++) {
+    const sprayName = data.sprays[i].displayName.toLowerCase();
+    if ((!searchSprays || sprayName.includes(searchSkin.toLowerCase())) && (data.sprays[i].fullTransparentIcon !== null)) {
+
+      $cardWrapper.classList.add('card-wrapper');
+      $iconImage.classList.add('spray-icon');
+      $textWrapper.classList.add('text-wrapper');
+      $sprayTitle.classList.add('spray-title');
+      $columnThird.classList.add('column-third');
+
+      $row.appendChild($columnThird);
+      $cardWrapper.appendChild($columnThird);
+      $cardContainer.appendChild($cardWrapper);
+      $cardWrapper.appendChild($iconImage);
+      $iconImage.appendChild($textWrapper);
+      $cardWrapper.appendChild($textWrapper);
+      $textWrapper.appendChild($sprayTitle);
+    }
+  }
+}

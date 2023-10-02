@@ -86,6 +86,7 @@ i {
 
 .search-wrapper {
   margin-top: 1.5rem;
+  margin-bottom: 2rem;
   display: flex;
   justify-content: center;
   padding-left: 1rem;
@@ -107,7 +108,7 @@ i {
   display: flex;
   justify-content: center;
   border-radius: 1rem;
-  margin: 0 3rem;
+  margin: 0 4rem;
   flex-wrap: wrap;
   gap: 30px;
 }
@@ -118,7 +119,7 @@ i {
   background-color: #87bbe1;
   border: 3px solid black;
   border-radius: 1rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding: 0.4rem;
 }
 
@@ -148,6 +149,10 @@ body {
 }
 
 @media only screen and (min-width: 576px) {
+  .search-wrapper {
+    margin-bottom: 2rem;
+  }
+
   .carousel-wrapper {
     flex-basis: 70%;
   }
@@ -157,27 +162,16 @@ body {
   }
 
   .carousel {
-    margin-top: 1rem;
+    margin-top: 3rem;
   }
 
   .card-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    border-radius: 1rem;
-    margin: 0 1rem;
-    flex-wrap: wrap;
+    margin: 0 9rem;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .mobile-nav {
-    background-color: #f7dad9;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    border-top: 3px solid black;
-    padding: 1rem;
     display: none;
   }
 
@@ -199,12 +193,7 @@ body {
   }
 
   .card-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    border-radius: 1rem;
-    margin: 0 1rem;
-    flex-wrap: wrap;
+    margin: 0 6rem;
   }
 
   .card-wrapper {
@@ -214,17 +203,12 @@ body {
 
 @media only screen and (min-width: 992px) {
   .mobile-nav {
-    background-color: #f7dad9;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    border-top: 3px solid black;
-    padding: 1rem;
     display: none;
   }
 
   .carousel-wrapper {
-    flex-basis: 55%;
+    margin-bottom: 1rem;
+    flex-basis: 50%;
     height: 240px;
   }
 
