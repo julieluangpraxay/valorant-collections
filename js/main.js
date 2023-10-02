@@ -109,3 +109,9 @@ function searchSprays() {
     }
   }
 }
+
+const $hamburgerMenu = document.querySelector('.mobile-nav');
+
+$hamburgerMenu.addEventListener('click', function (event) {
+
+});
