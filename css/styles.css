@@ -11,7 +11,7 @@ header {
 }
 
 .logo {
-  width: 35%;
+  width: 30%;
   margin-top: 0.5rem;
   height: 15%;
 }
@@ -31,11 +31,12 @@ img {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 180px;
+  height: 220px;
 }
 
 .carousel {
   margin-top: 1rem;
+  height: 200px;
 }
 
 .hidden {
@@ -49,8 +50,6 @@ img {
   width: 100%;
   border-top: 3px solid black;
   padding: 1rem;
-
-  /* display: none; */
 }
 
 i {
@@ -86,7 +85,7 @@ i {
 }
 
 .search-wrapper {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
   padding-left: 1rem;
@@ -110,6 +109,7 @@ i {
   border-radius: 1rem;
   margin: 0 3rem;
   flex-wrap: wrap;
+  gap: 30px;
 }
 
 .card-wrapper {
@@ -149,16 +149,11 @@ body {
 
 @media only screen and (min-width: 576px) {
   .carousel-wrapper {
-    flex-basis: 40%;
+    flex-basis: 70%;
   }
 
   .logo {
-    flex-basis: 15%;
-  }
-
-  .row {
-    display: flex;
-    flex-wrap: wrap;
+    flex-basis: 25%;
   }
 
   .carousel {
@@ -173,19 +168,19 @@ body {
     margin: 0 1rem;
     flex-wrap: wrap;
   }
-
-  .card-wrapper {
-    flex-wrap: wrap;
-    background-color: #87bbe1;
-    border: 3px solid black;
-    border-radius: 1rem;
-    margin-top: 2.5rem;
-    flex-basis: 50%;
-    width: 100%;
-  }
 }
 
 @media only screen and (min-width: 768px) {
+  .mobile-nav {
+    background-color: #f7dad9;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 3px solid black;
+    padding: 1rem;
+    display: none;
+  }
+
   .carousel-wrapper {
     flex-basis: 70%;
   }
@@ -213,31 +208,40 @@ body {
   }
 
   .card-wrapper {
-    width: 100%;
-    flex-basis: calc(100% / 2);
-    flex-wrap: wrap;
-    background-color: #87bbe1;
-    border: 3px solid black;
-    border-radius: 1rem;
+    flex-basis: calc(100% / 2 - 30px);
   }
 }
 
-@media only screen and (min-width: 800px) {
-  .card-container {
+@media only screen and (min-width: 992px) {
+  .mobile-nav {
+    background-color: #f7dad9;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 3px solid black;
+    padding: 1rem;
+    display: none;
+  }
+
+  .carousel-wrapper {
+    flex-basis: 55%;
+    height: 240px;
+  }
+
+  .logo {
+    flex-basis: 15%;
+  }
+
+  .row {
     display: flex;
-    justify-content: center;
-    border-radius: 1rem;
     flex-wrap: wrap;
   }
 
+  .carousel {
+    margin-top: 1rem;
+  }
+
   .card-wrapper {
-    flex-basis: calc(100% / 3 - 10px);
-    flex-wrap: wrap;
-    padding: 0.5rem;
-    background-color: #87bbe1;
-    border: 3px solid black;
-    border-radius: 1rem;
-    margin-top: 2rem;
-    width: 100%;
+    flex-basis: calc(100% / 3 - 30px);
   }
 }
