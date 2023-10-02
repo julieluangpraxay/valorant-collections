@@ -65,7 +65,7 @@ i {
 }
 
 .search {
-  width: 250px;
+  width: 55vw;
   border-radius: 0.5rem;
   border-style: hidden;
   border: none;
@@ -130,7 +130,7 @@ i {
   text-align: center;
   width: 100%;
   align-items: center;
-  font-size: 25px;
+  font-size: 23px;
   margin-top: 1rem;
 }
 
@@ -199,6 +199,10 @@ body {
   .card-wrapper {
     flex-basis: calc(100% / 2 - 30px);
   }
+
+  .search-wrapper {
+    margin-bottom: 2rem;
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -207,13 +211,12 @@ body {
   }
 
   .carousel-wrapper {
-    margin-bottom: 1rem;
-    flex-basis: 50%;
-    height: 240px;
+    flex-basis: 38%;
+    height: 210px;
   }
 
   .logo {
-    flex-basis: 15%;
+    flex-basis: 13%;
   }
 
   .row {
@@ -227,5 +230,46 @@ body {
 
   .card-wrapper {
     flex-basis: calc(100% / 3 - 30px);
+  }
+
+  .card-container {
+    margin: 0 10rem;
+  }
+
+  .search-wrapper {
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1550px) {
+  .mobile-nav {
+    display: none;
+  }
+
+  .carousel-wrapper {
+    margin-bottom: 1rem;
+    flex-basis: 35%;
+    height: 245px;
+  }
+
+  .logo {
+    flex-basis: 9%;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .carousel {
+    margin-top: 2rem;
+  }
+
+  .card-wrapper {
+    flex-basis: calc(100% / 4 - 30px);
+  }
+
+  .search-wrapper {
+    margin-bottom: 3rem;
   }
 }
