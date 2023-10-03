@@ -110,17 +110,32 @@ function searchSprays() {
   }
 }
 
-const $hamburgerMenu = document.querySelector('.fa-bars');
-const $mobileNav = document.querySelector('.sidenav');
+// const $hamburgerMenu = document.querySelector('.fa-bars');
+// const $mobileNav = document.querySelector('.myidenav');
 
-$hamburgerMenu.addEventListener('click', function (event) {
-  $mobileNav.classList.remove('hidden');
+// $hamburgerMenu.addEventListener('click', function (event) {
+//   $mobileNav.classList.remove('hidden');
 
+// });
+
+// const $closeButton = document.querySelector('.closebtn');
+
+// $closeButton.addEventListener('click', function (event) {
+//   $mobileNav.classList.add('hidden');
+
+// });
+// mobile
+
+const $hamburger = document.querySelector('.mobile-ham');
+const $mobile = document.querySelector('.sidenav');
+
+$hamburger.addEventListener('click', function (event) {
+  $mobile.classList.remove('hidden');
 });
 
-const $closeButton = document.querySelector('.closebtn');
+const $close = document.querySelector('.closebtn');
 
-$closeButton.addEventListener('click', function (event) {
-  $mobileNav.classList.add('hidden');
+$close.addEventListener('click', function (event) {
+  $mobile.classList.add('hidden');
 
 });
