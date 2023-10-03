@@ -110,8 +110,17 @@ function searchSprays() {
   }
 }
 
-const $hamburgerMenu = document.querySelector('.mobile-nav');
+const $hamburgerMenu = document.querySelector('.fa-bars');
+const $mobileNav = document.querySelector('.sidenav');
 
 $hamburgerMenu.addEventListener('click', function (event) {
+  $mobileNav.classList.remove('hidden');
+
+});
+
+const $closeButton = document.querySelector('.closebtn');
+
+$closeButton.addEventListener('click', function (event) {
+  $mobileNav.classList.add('hidden');
 
 });

@@ -11,7 +11,7 @@ header {
 }
 
 .logo {
-  width: 25%;
+  width: 30%;
   margin: 0.8rem 0;
   height: 15%;
 }
@@ -111,6 +111,7 @@ i {
   margin: 0 4rem;
   flex-wrap: wrap;
   gap: 30px;
+  margin-bottom: 7rem;
 }
 
 .card-wrapper {
@@ -158,7 +159,7 @@ body {
   }
 
   .logo {
-    flex-basis: 16%;
+    flex-basis: 18%;
   }
 
   .carousel {
@@ -275,5 +276,59 @@ body {
 
   .search-wrapper {
     margin-bottom: 3rem;
+  }
+}
+
+/* MOBILE NAV */
+.mobile-nav:active {
+  transition: 0.5s;
+}
+
+.sidenav {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  background-color: rgb(135, 187, 225, 0.8);
+  padding-top: 60px;
+  border: solid black 2px;
+  top: 0;
+  left: 0;
+}
+
+.sidenav .nav-button {
+  text-align: center;
+  padding: 3px 3px 3px 5px;
+  margin: 2.5rem 1.5rem;
+  text-decoration: none;
+  font-size: 25px;
+  color: #0e4071;
+  display: block;
+  transition: 0.3s;
+  box-shadow: 10px 10px 0 -2px #fdeaac, 10px 10px 0 0 black;
+  border-radius: 2rem;
+  background-color: #fdeaac;
+  border: 3px solid black;
+}
+
+.sidenav a:active {
+  transform: translateY(0.25rem);
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
   }
 }
