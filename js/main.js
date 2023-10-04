@@ -70,6 +70,13 @@ function getSkinsData(name) {
         $cardWrapper.appendChild($textWrapper);
         $textWrapper.appendChild($sprayTitle);
 
+        // add to favorites
+
+        $heart.addEventListener('click', function (event) {
+          $heart.classList.remove('fa-regular');
+          $heart.classList.add('fa-solid', 'fa-heart');
+        });
+
       }
     }
   });
