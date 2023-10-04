@@ -15,7 +15,7 @@ function carousel() {
   }
 }
 
-setInterval(carousel, 1000);
+setInterval(carousel, 3000);
 
 const $cardContainer = document.querySelector('.card-container');
 
@@ -110,30 +110,15 @@ function searchSprays() {
   }
 }
 
-// const $hamburgerMenu = document.querySelector('.fa-bars');
-// const $mobileNav = document.querySelector('.myidenav');
+const $hamburgerMobile = document.querySelector('.fa-bars');
+const $mobile = document.querySelector('#sideNav');
 
-// $hamburgerMenu.addEventListener('click', function (event) {
-//   $mobileNav.classList.remove('hidden');
-
-// });
-
-// const $closeButton = document.querySelector('.closebtn');
-
-// $closeButton.addEventListener('click', function (event) {
-//   $mobileNav.classList.add('hidden');
-
-// });
-// mobile
-
-const $hamburger = document.querySelector('.mobile-ham');
-const $mobile = document.querySelector('.sidenav');
-
-$hamburger.addEventListener('click', function (event) {
+$hamburgerMobile.addEventListener('click', function (event) {
   $mobile.classList.remove('hidden');
+
 });
 
-const $close = document.querySelector('.closebtn');
+const $close = document.querySelector('.fa-xmark');
 
 $close.addEventListener('click', function (event) {
   $mobile.classList.add('hidden');

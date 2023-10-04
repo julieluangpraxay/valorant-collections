@@ -16,23 +16,17 @@ nav {
   margin-right: 1.5rem;
 }
 
-.top-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .logo {
-  width: 30%;
+  width: 65%;
   margin: 0.8rem 0;
-  height: 15%;
-  justify-content: center;
+  height: 20%;
 }
 
-.desktop-menu {
+.mobile-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: 1s;
 }
 
 img {
@@ -61,15 +55,6 @@ img {
 
 .hidden {
   display: none;
-}
-
-.mobile-nav {
-  background-color: #f7dad9;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  border-top: 3px solid black;
-  padding: 1rem;
 }
 
 i {
@@ -169,6 +154,46 @@ body {
   background-attachment: fixed;
 }
 
+.sidenav {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  background-color: rgb(135, 187, 225, 0.8);
+  padding-top: 60px;
+  border: solid black 2px;
+  top: 0;
+  right: 0;
+}
+
+.sidenav .nav-button {
+  text-align: center;
+  padding: 3px 3px 3px 5px;
+  margin: 2.5rem 1.5rem;
+  text-decoration: none;
+  font-size: 25px;
+  color: #0e4071;
+  display: block;
+  transition: 0.3s;
+  box-shadow: 10px 10px 0 -2px #fdeaac, 10px 10px 0 0 black;
+  border-radius: 2rem;
+  background-color: #fdeaac;
+  border: 3px solid black;
+}
+
+.sidenav a:active {
+  transform: translateY(0.25rem);
+}
+
+.sidenav > .closebtn {
+  display: flex;
+  justify-content: end;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  font-size: 45px;
+  color: black;
+}
+
 @media only screen and (min-width: 576px) {
   .search-wrapper {
     margin-bottom: 2rem;
@@ -179,7 +204,7 @@ body {
   }
 
   .logo {
-    flex-basis: 18%;
+    flex-basis: 50%;
   }
 
   .carousel {
@@ -196,8 +221,8 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
-  .mobile-nav {
-    display: none;
+  .sidenav {
+    width: 30%;
   }
 
   .carousel-wrapper {
@@ -205,7 +230,7 @@ body {
   }
 
   .logo {
-    flex-basis: 15%;
+    flex-basis: 25%;
   }
 
   .row {
@@ -231,8 +256,8 @@ body {
 }
 
 @media only screen and (min-width: 992px) {
-  .mobile-nav {
-    display: none;
+  .sidenav {
+    width: 30%;
   }
 
   .carousel-wrapper {
@@ -241,7 +266,7 @@ body {
   }
 
   .logo {
-    flex-basis: 13%;
+    flex-basis: 20%;
   }
 
   .row {
@@ -267,8 +292,8 @@ body {
 }
 
 @media only screen and (min-width: 1550px) {
-  .mobile-nav {
-    display: none;
+  .sidenav {
+    width: 15%;
   }
 
   .carousel-wrapper {
@@ -278,7 +303,7 @@ body {
   }
 
   .logo {
-    flex-basis: 9%;
+    flex-basis: 12%;
   }
 
   .row {
@@ -299,56 +324,6 @@ body {
   }
 }
 
-/* MOBILE NAV */
-.mobile-nav:active {
-  transition: 0.5s;
+cursor:hover {
+  cursor: pointer;
 }
-
-.sidenav {
-  height: 100%;
-  width: 50%;
-  position: fixed;
-  z-index: 1;
-  background-color: rgb(135, 187, 225, 0.8);
-  padding-top: 60px;
-  border: solid black 2px;
-  top: 0;
-  left: 0;
-}
-
-.sidenav .nav-button {
-  text-align: center;
-  padding: 3px 3px 3px 5px;
-  margin: 2.5rem 1.5rem;
-  text-decoration: none;
-  font-size: 25px;
-  color: #0e4071;
-  display: block;
-  transition: 0.3s;
-  box-shadow: 10px 10px 0 -2px #fdeaac, 10px 10px 0 0 black;
-  border-radius: 2rem;
-  background-color: #fdeaac;
-  border: 3px solid black;
-}
-
-.sidenav a:active {
-  transform: translateY(0.25rem);
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-/* @media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-
-  .sidenav a {
-    font-size: 18px;
-  }
-} */
