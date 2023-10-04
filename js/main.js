@@ -39,8 +39,11 @@ function getSkinsData(name) {
 
         if (xhr.response.data[i].animationGif !== null) {
           $iconImage.src = xhr.response.data[i].animationGif;
+          $iconImage.setAttribute('src', 'Animated Valorant Spray Gif ');
         } else {
           $iconImage.src = xhr.response.data[i].fullTransparentIcon;
+          $iconImage.setAttribute('src', 'Valorant Spray Iamge');
+
         }
 
         $cardWrapper.classList.add('card-wrapper');
@@ -88,8 +91,12 @@ function searchSprays() {
       if (data.sprays[i].animationGif !==
          null) {
         $iconImage.src = data.sprays[i].animationGif;
+        $iconImage.setAttribute('src', 'Animated Valorant Spray Gif ');
+
       } else {
         $iconImage.src = data.sprays[i].fullTransparentIcon;
+        $iconImage.setAttribute('src', 'Valorant Spray Iamge');
+
       }
 
       $cardWrapper.classList.add('card-wrapper');
