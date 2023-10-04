@@ -130,6 +130,7 @@ i {
   border-radius: 1rem;
   margin-top: 1rem;
   padding: 0.4rem;
+  width: 100%;
 }
 
 .spray-title {
@@ -139,8 +140,9 @@ i {
   text-align: center;
   width: 100%;
   align-items: center;
-  font-size: 23px;
+  font-size: 26px;
   margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .text-wrapper {
@@ -194,6 +196,22 @@ body {
   padding-bottom: 1rem;
   font-size: 45px;
   color: black;
+}
+
+.img-row {
+  text-align: right;
+  padding-bottom: 0.6rem;
+  padding-right: 0.3rem;
+  padding-top: 0.5rem;
+}
+
+.img-wrapper {
+  padding: 0.2rem;
+}
+
+.fa-heart {
+  color: red;
+  z-index: 1;
 }
 
 @media only screen and (min-width: 576px) {

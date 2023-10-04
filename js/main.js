@@ -36,26 +36,37 @@ function getSkinsData(name) {
         const $iconImage = document.createElement('img');
         const $textWrapper = document.createElement('div');
         const $sprayTitle = document.createElement('p');
+        const $imgWrapper = document.createElement('div');
+        const $imgRow = document.createElement('div');
 
         if (xhr.response.data[i].animationGif !== null) {
           $iconImage.src = xhr.response.data[i].animationGif;
-          $iconImage.setAttribute('alt', 'Animated Valorant Spray Gif ');
+          $iconImage.setAttribute('alt', 'Animated Valorant Spray Gif');
         } else {
           $iconImage.src = xhr.response.data[i].fullTransparentIcon;
           $iconImage.setAttribute('alt', 'Valorant Spray Iamge');
 
         }
 
+        // heart button
+
+        const $heart = document.createElement('i');
+        $heart.classList.add('fa-regular', 'fa-heart', 'fa-2xl', 'image-heart');
+        $imgRow.classList.add('img-row');
+        $imgWrapper.classList.add('img-wrapper');
         $cardWrapper.classList.add('card-wrapper');
         $iconImage.classList.add('spray-icon');
         $textWrapper.classList.add('text-wrapper');
         $sprayTitle.classList.add('spray-title');
-
         $sprayTitle.textContent = xhr.response.data[i].displayName;
 
         $cardContainer.appendChild($cardWrapper);
-        $cardWrapper.appendChild($iconImage);
-        $iconImage.appendChild($textWrapper);
+
+        $cardWrapper.appendChild($imgWrapper);
+        $imgWrapper.appendChild($imgRow);
+        $imgRow.appendChild($heart);
+        $imgWrapper.appendChild($iconImage);
+
         $cardWrapper.appendChild($textWrapper);
         $textWrapper.appendChild($sprayTitle);
 
@@ -80,12 +91,11 @@ function searchSprays() {
     const sprayName = data.sprays[i].displayName.toLowerCase();
     if ((!searchSprays || sprayName.includes(searchSkin.toLowerCase())) && (data.sprays[i].fullTransparentIcon !== null)) {
 
-      const $row = document.querySelector('.row');
-      const $columnThird = document.createElement('div');
       const $cardWrapper = document.createElement('div');
       const $iconImage = document.createElement('img');
       const $textWrapper = document.createElement('div');
       const $sprayTitle = document.createElement('p');
+      const $imgWrapper = document.createElement('div');
 
       $sprayTitle.textContent = data.sprays[i].displayName;
       if (data.sprays[i].animationGif !==
@@ -99,16 +109,22 @@ function searchSprays() {
 
       }
 
+      const $heart = document.createElement('i');
+      $heart.classList.add('fa-regular', 'fa-heart', 'fa-2xl', 'image-heart');
+      $imgWrapper.classList.add('img-wrapper');
+
       $cardWrapper.classList.add('card-wrapper');
       $iconImage.classList.add('spray-icon');
       $textWrapper.classList.add('text-wrapper');
       $sprayTitle.classList.add('spray-title');
-      $columnThird.classList.add('column-third');
+      // $sprayTitle.textContent = xhr.response.data[i].displayName;
 
-      $row.appendChild($columnThird);
-      $cardWrapper.appendChild($columnThird);
       $cardContainer.appendChild($cardWrapper);
+      $cardWrapper.appendChild($imgWrapper);
+      $imgWrapper.appendChild($iconImage);
+      $imgWrapper.appendChild($heart);
       $cardWrapper.appendChild($iconImage);
+
       $iconImage.appendChild($textWrapper);
       $cardWrapper.appendChild($textWrapper);
       $textWrapper.appendChild($sprayTitle);
