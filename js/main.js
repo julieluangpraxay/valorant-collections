@@ -39,10 +39,10 @@ function getSkinsData(name) {
 
         if (xhr.response.data[i].animationGif !== null) {
           $iconImage.src = xhr.response.data[i].animationGif;
-          $iconImage.setAttribute('src', 'Animated Valorant Spray Gif ');
+          $iconImage.setAttribute('alt', 'Animated Valorant Spray Gif ');
         } else {
           $iconImage.src = xhr.response.data[i].fullTransparentIcon;
-          $iconImage.setAttribute('src', 'Valorant Spray Iamge');
+          $iconImage.setAttribute('alt', 'Valorant Spray Iamge');
 
         }
 
@@ -91,11 +91,11 @@ function searchSprays() {
       if (data.sprays[i].animationGif !==
          null) {
         $iconImage.src = data.sprays[i].animationGif;
-        $iconImage.setAttribute('src', 'Animated Valorant Spray Gif ');
+        $iconImage.setAttribute('alt', 'Animated Valorant Spray Gif ');
 
       } else {
         $iconImage.src = data.sprays[i].fullTransparentIcon;
-        $iconImage.setAttribute('src', 'Valorant Spray Iamge');
+        $iconImage.setAttribute('alt', 'Valorant Spray Iamge');
 
       }
 
