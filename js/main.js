@@ -47,7 +47,12 @@ function getSkinsData(name) {
         // heart button
 
         const $heart = document.createElement('i');
-        $heart.classList.add('fa-regular', 'fa-heart', 'fa-2xl', 'image-heart');
+        if (data.favorites.includes(xhr.response.data[i].displayName)) {
+          $heart.classList.add('fa-solid', 'fa-heart', 'fa-2xl', 'image-heart');
+        } else {
+          $heart.classList.add('fa-regular', 'fa-heart', 'fa-2xl', 'image-heart');
+        }
+
         $imgRow.classList.add('img-row');
         $imgWrapper.classList.add('img-wrapper');
         $cardWrapper.classList.add('card-wrapper');
@@ -57,12 +62,10 @@ function getSkinsData(name) {
         $sprayTitle.textContent = xhr.response.data[i].displayName;
 
         $cardContainer.appendChild($cardWrapper);
-
         $cardWrapper.appendChild($imgWrapper);
         $imgWrapper.appendChild($imgRow);
         $imgRow.appendChild($heart);
         $imgWrapper.appendChild($iconImage);
-
         $cardWrapper.appendChild($textWrapper);
         $textWrapper.appendChild($sprayTitle);
 
@@ -73,9 +76,13 @@ function getSkinsData(name) {
           $heart.classList.add('fa-solid', 'fa-heart');
 
           const clickedHeart = event.target;
-          const cardContainer = clickedHeart.closest('div');
+          const cardContainer = clickedHeart.closest('.card-wrapper');
+          const closestSprayName = cardContainer.lastChild.firstChild.textContent;
+          if (!data.favorites.includes(closestSprayName)) {
+            data.favorites.push(closestSprayName);
 
-          data.favorites.push(cardContainer);
+          }
+
         });
       }
     }
@@ -91,48 +98,53 @@ $searchBar.addEventListener('input', searchSprays);
 
 function searchSprays() {
   event.preventDefault();
-  const searchSkin = $searchBar.value;
+  const searchTerm = $searchBar.value.toLowerCase();
   $cardContainer.innerHTML = ' ';
 
   for (let i = 0; i < data.sprays.length; i++) {
-    const sprayName = data.sprays[i].displayName.toLowerCase();
-    if (
-      (!searchSprays || sprayName.includes(searchSkin.toLowerCase())) &&
-      data.sprays[i].fullTransparentIcon !== null
-    ) {
+    const spray = data.sprays[i];
+    const sprayName = spray.displayName.toLowerCase();
+
+    if (searchTerm === '' || (sprayName.includes(searchTerm) && spray.fullTransparentIcon !== null)) {
       const $cardWrapper = document.createElement('div');
       const $iconImage = document.createElement('img');
       const $textWrapper = document.createElement('div');
       const $sprayTitle = document.createElement('p');
       const $imgWrapper = document.createElement('div');
+      const $imgRow = document.createElement('div');
 
-      $sprayTitle.textContent = data.sprays[i].displayName;
-      if (data.sprays[i].animationGif !== null) {
-        $iconImage.src = data.sprays[i].animationGif;
-        $iconImage.setAttribute('alt', 'Animated Valorant Spray Gif ');
-      } else {
-        $iconImage.src = data.sprays[i].fullTransparentIcon;
-        $iconImage.setAttribute('alt', 'Valorant Spray Iamge');
-      }
+      $sprayTitle.textContent = spray.displayName;
+      $iconImage.src = spray.animationGif || spray.fullTransparentIcon;
+      $iconImage.setAttribute('alt', 'Valorant Spray Image');
 
       const $heart = document.createElement('i');
       $heart.classList.add('fa-regular', 'fa-heart', 'fa-2xl', 'image-heart');
       $imgWrapper.classList.add('img-wrapper');
-
       $cardWrapper.classList.add('card-wrapper');
       $iconImage.classList.add('spray-icon');
       $textWrapper.classList.add('text-wrapper');
       $sprayTitle.classList.add('spray-title');
+      $imgRow.classList.add('img-row');
 
       $cardContainer.appendChild($cardWrapper);
       $cardWrapper.appendChild($imgWrapper);
+      $imgWrapper.appendChild($imgRow);
+      $imgRow.appendChild($heart);
       $imgWrapper.appendChild($iconImage);
-      $imgWrapper.appendChild($heart);
       $cardWrapper.appendChild($iconImage);
-
       $iconImage.appendChild($textWrapper);
       $cardWrapper.appendChild($textWrapper);
       $textWrapper.appendChild($sprayTitle);
+
+      $heart.addEventListener('click', function (event) {
+        $heart.classList.remove('fa-regular');
+        $heart.classList.add('fa-solid', 'fa-heart');
+
+        const clickedHeart = event.target;
+        const cardContainer = clickedHeart.closest('.card-wrapper');
+        const closestSprayName = cardContainer.lastChild.firstChild.textContent;
+        data.favorites.push(closestSprayName);
+      });
     }
   }
 }
@@ -149,3 +161,22 @@ const $close = document.querySelector('.fa-xmark');
 $close.addEventListener('click', function (event) {
   $mobile.classList.add('hidden');
 });
+
+// const $favoritesPage = document.querySelector('.favorites-page');
+// const $spraysPage = document.querySelector('.sprays-page');
+// const $favoritesNavButton = document.querySelector('.favorite-nav-button');
+
+// $favoritesNavButton.addEventListener('click', function (event) {
+//   function viewSwap(viewName) {
+//     console.log('data.view', data.view);
+//     if (viewName === 'sprays-page') {
+//       data.view = 'favorites-page';
+//       $favoritesPage.classList.remove('hidden');
+//       $spraysPage.classList.add('hidden');
+//     }
+//   }
+//   viewSwap('favorites-page');
+
+//   console.log('clicked');
+
+// });

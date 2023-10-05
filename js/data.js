@@ -1,15 +1,16 @@
 /* exported data */
 let data = {
   sprays: [],
-  favorites: []
+  favorites: [],
+  view: 'favorites-page'
 };
 
-// window.addEventListener('beforeunload', function (event) {
-//   const favoritesJSON = JSON.stringify(data);
-//   localStorage.setItem('favorites-local-storage', favoritesJSON);
-// });
+window.addEventListener('beforeunload', function (event) {
+  const favoritesJSON = JSON.stringify(data.favorites);
+  localStorage.setItem('favoriteSprays', favoritesJSON);
+});
+const previousFavoritesJSON = localStorage.getItem('favoriteSprays');
 
-// const previousFavoritesJSON = localStorage.getItem('favorites-local-storage');
-// if (previousFavoritesJSON !== null) {
-//   data = JSON.parse(previousFavoritesJSON);
-// }
+if (previousFavoritesJSON !== null) {
+  data.favorites = JSON.parse(previousFavoritesJSON);
+}
