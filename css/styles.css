@@ -345,3 +345,7 @@ body {
 cursor:hover {
   cursor: pointer;
 }
+
+i:hover {
+  cursor: pointer;
+}
