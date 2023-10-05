@@ -11,7 +11,6 @@ function carousel() {
 
   if (currentBannerIndex >= $bannerCarousel.length) {
     currentBannerIndex = 0;
-
   }
 }
 
@@ -24,11 +23,9 @@ function getSkinsData(name) {
   xhr.open('GET', 'https://valorant-api.com/v1/sprays');
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
-
-    $cardContainer.innerHTML = '';
+    $cardContainer.innerHTML = ' ';
 
     for (let i = 0; i < xhr.response.data.length; i++) {
-
       if (xhr.response.data[i].fullTransparentIcon !== null) {
         data.sprays.push(xhr.response.data[i]);
 
@@ -45,7 +42,6 @@ function getSkinsData(name) {
         } else {
           $iconImage.src = xhr.response.data[i].fullTransparentIcon;
           $iconImage.setAttribute('alt', 'Valorant Spray Iamge');
-
         }
 
         // heart button
@@ -75,8 +71,12 @@ function getSkinsData(name) {
         $heart.addEventListener('click', function (event) {
           $heart.classList.remove('fa-regular');
           $heart.classList.add('fa-solid', 'fa-heart');
-        });
 
+          const clickedHeart = event.target;
+          const cardContainer = clickedHeart.closest('div');
+
+          data.favorites.push(cardContainer);
+        });
       }
     }
   });
@@ -96,8 +96,10 @@ function searchSprays() {
 
   for (let i = 0; i < data.sprays.length; i++) {
     const sprayName = data.sprays[i].displayName.toLowerCase();
-    if ((!searchSprays || sprayName.includes(searchSkin.toLowerCase())) && (data.sprays[i].fullTransparentIcon !== null)) {
-
+    if (
+      (!searchSprays || sprayName.includes(searchSkin.toLowerCase())) &&
+      data.sprays[i].fullTransparentIcon !== null
+    ) {
       const $cardWrapper = document.createElement('div');
       const $iconImage = document.createElement('img');
       const $textWrapper = document.createElement('div');
@@ -105,15 +107,12 @@ function searchSprays() {
       const $imgWrapper = document.createElement('div');
 
       $sprayTitle.textContent = data.sprays[i].displayName;
-      if (data.sprays[i].animationGif !==
-         null) {
+      if (data.sprays[i].animationGif !== null) {
         $iconImage.src = data.sprays[i].animationGif;
         $iconImage.setAttribute('alt', 'Animated Valorant Spray Gif ');
-
       } else {
         $iconImage.src = data.sprays[i].fullTransparentIcon;
         $iconImage.setAttribute('alt', 'Valorant Spray Iamge');
-
       }
 
       const $heart = document.createElement('i');
@@ -124,7 +123,6 @@ function searchSprays() {
       $iconImage.classList.add('spray-icon');
       $textWrapper.classList.add('text-wrapper');
       $sprayTitle.classList.add('spray-title');
-      // $sprayTitle.textContent = xhr.response.data[i].displayName;
 
       $cardContainer.appendChild($cardWrapper);
       $cardWrapper.appendChild($imgWrapper);
@@ -135,7 +133,6 @@ function searchSprays() {
       $iconImage.appendChild($textWrapper);
       $cardWrapper.appendChild($textWrapper);
       $textWrapper.appendChild($sprayTitle);
-
     }
   }
 }
@@ -145,12 +142,10 @@ const $mobile = document.querySelector('#sideNav');
 
 $hamburgerMobile.addEventListener('click', function (event) {
   $mobile.classList.remove('hidden');
-
 });
 
 const $close = document.querySelector('.fa-xmark');
 
 $close.addEventListener('click', function (event) {
   $mobile.classList.add('hidden');
-
 });

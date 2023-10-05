@@ -62,7 +62,6 @@ img {
 
 i {
   color: #c15b75;
-  width: 100%;
   display: flex;
   line-height: normal;
 }
@@ -201,17 +200,16 @@ body {
 .img-row {
   text-align: right;
   padding-bottom: 0.6rem;
-  padding-right: 0.3rem;
+  padding-right: 0.4rem;
   padding-top: 0.5rem;
 }
 
 .img-wrapper {
-  padding: 0.2rem;
+  text-align: right;
 }
 
 .fa-heart {
-  color: red;
-  z-index: 1;
+  color: #c15b75;
 }
 
 @media only screen and (min-width: 576px) {
