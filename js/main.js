@@ -44,8 +44,6 @@ function getSkinsData(name) {
           $iconImage.setAttribute('alt', 'Valorant Spray Iamge');
         }
 
-        // heart button
-
         const $heart = document.createElement('i');
         if (data.favorites.includes(xhr.response.data[i].displayName)) {
           $heart.classList.add('fa-solid', 'fa-heart', 'fa-2xl', 'image-heart');
@@ -68,8 +66,6 @@ function getSkinsData(name) {
         $imgWrapper.appendChild($iconImage);
         $cardWrapper.appendChild($textWrapper);
         $textWrapper.appendChild($sprayTitle);
-
-        // add to favorites
 
         $heart.addEventListener('click', function (event) {
           $heart.classList.remove('fa-regular');
@@ -163,22 +159,3 @@ const $close = document.querySelector('.fa-xmark');
 $close.addEventListener('click', function (event) {
   $mobile.classList.add('hidden');
 });
-
-// const $favoritesPage = document.querySelector('.favorites-page');
-// const $spraysPage = document.querySelector('.sprays-page');
-// const $favoritesNavButton = document.querySelector('.favorite-nav-button');
-
-// $favoritesNavButton.addEventListener('click', function (event) {
-//   function viewSwap(viewName) {
-//     console.log('data.view', data.view);
-//     if (viewName === 'sprays-page') {
-//       data.view = 'favorites-page';
-//       $favoritesPage.classList.remove('hidden');
-//       $spraysPage.classList.add('hidden');
-//     }
-//   }
-//   viewSwap('favorites-page');
-
-//   console.log('clicked');
-
-// });
