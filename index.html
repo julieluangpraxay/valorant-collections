@@ -1,80 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valorant Collections</title>
+    <link rel="icon" href="images/moonicon.png" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400&display=swap"
+      rel="stylesheet" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valorant Collectionss</title>
-  <link rel="icon" href="images/moonicon.png">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400&display=swap" rel="stylesheet">
-</head>
-
-<body>
-  <header>
-
-    <div class="logo">
-      <img src="images/logo.png" alt="valorant collections logo">
-    </div>
-    <nav>
-      <div class="nav">
-        <i class="fa-solid fa-bars fa-2xl ham">
-        </i>
-        <div id="sideNav" class="sidenav hidden">
-          <i class="fa-solid fa-xmark fa-2xl closebtn"></i>
-          <a class="nav-button" href="#">HOME</a>
-          <a class="nav-button" href="#">SPRAYS</a>
-          <a class="nav-button" href="#">FAVORITES</a>
-        </div>
-
+  <body>
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" alt="valorant collections logo" />
       </div>
-    </nav>
+      <nav>
+        <div class="nav">
+          <i class="fa-solid fa-bars fa-2xl ham"> </i>
+          <div id="sideNav" class="sidenav hidden">
+            <i class="fa-solid fa-xmark fa-2xl closebtn"></i>
+            <a class="nav-button" href="#">HOME</a>
+            <a class="nav-button favorite-nav-button" href="#">FAVORITES</a>
+            <a class="nav-button" href="#">SPRAYS</a>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-  </header>
-
-  <main>
-    <div class="container">
-      <div class="row">
-        <div class="carousel-wrapper">
-          <div class="carousel">
-            <img src="images/val1.jpeg" alt="valorant banner image" class="banner">
-            <img src="images/val3.jpeg" alt="valorant banner image" class="banner hidden">
-            <img src="images/val4.jpeg" alt="valorant banner image" class="banner hidden">
-            <img src="images/val5.jpeg" alt="valorant banner image" class="banner hidden">
-            <img src="images/val6.jpeg" alt="valorant banner image" class="banner hidden">
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="carousel-wrapper">
+            <div class="carousel">
+              <img
+                src="images/val1.jpeg"
+                alt="valorant banner image"
+                class="banner" />
+              <img
+                src="images/val3.jpeg"
+                alt="valorant banner image"
+                class="banner hidden" />
+              <img
+                src="images/val4.jpeg"
+                alt="valorant banner image"
+                class="banner hidden" />
+              <img
+                src="images/val5.jpeg"
+                alt="valorant banner image"
+                class="banner hidden" />
+              <img
+                src="images/val6.jpeg"
+                alt="valorant banner image"
+                class="banner hidden" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="search-wrapper">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <div class="search-bar">
-          <input class="search" type="search" name="search" id="search" placeholder="Search... eg: Sage">
+      <div class="row">
+        <div class="search-wrapper" data-view="search-bar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <div class="search-bar">
+            <input
+              class="search"
+              type="search"
+              name="search"
+              id="search"
+              placeholder="Search... eg: Sage" />
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="card-container">
+      <div class="row">
+        <div data-view="sprays-page" class="card-container"></div>
       </div>
-    </div>
 
-
-
-
-
-  </main>
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
-</body>
-
+      <div data-view="favorites-page" class="favorites-page hidden">
+        <div class="row">
+          <img src="images/favoriteslogo.png" alt="favorites logo image" />
+        </div>
+      </div>
+    </main>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
