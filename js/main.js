@@ -118,21 +118,23 @@ function searchSprays() {
       $iconImage.setAttribute('alt', 'Valorant Spray Image');
 
       const $heart = document.createElement('i');
-      $heart.classList.add('fa-regular', 'fa-heart', 'fa-2xl', 'image-heart');
+      if (data.favorites.includes(spray.displayName)) {
+        $heart.classList.add('fa-solid', 'fa-heart', 'fa-2xl', 'image-heart');
+      } else {
+        $heart.classList.add('fa-regular', 'fa-heart', 'fa-2xl', 'image-heart');
+      }
+      $imgRow.classList.add('img-row');
       $imgWrapper.classList.add('img-wrapper');
       $cardWrapper.classList.add('card-wrapper');
       $iconImage.classList.add('spray-icon');
       $textWrapper.classList.add('text-wrapper');
       $sprayTitle.classList.add('spray-title');
-      $imgRow.classList.add('img-row');
 
       $cardContainer.appendChild($cardWrapper);
       $cardWrapper.appendChild($imgWrapper);
       $imgWrapper.appendChild($imgRow);
       $imgRow.appendChild($heart);
       $imgWrapper.appendChild($iconImage);
-      $cardWrapper.appendChild($iconImage);
-      $iconImage.appendChild($textWrapper);
       $cardWrapper.appendChild($textWrapper);
       $textWrapper.appendChild($sprayTitle);
 
