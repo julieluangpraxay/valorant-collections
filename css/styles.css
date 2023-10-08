@@ -60,10 +60,29 @@ img {
   display: none !important;
 }
 
+ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
 i {
   color: #c15b75;
   display: flex;
   line-height: normal;
+}
+
+h3 {
+  text-align: center;
+  font-size: 25px;
+  margin-top: 1.5rem;
+}
+
+.favs-logo-container {
+  margin-top: 8rem;
+  width: 20%;
+  display: flex;
 }
 
 .fa-magnifying-glass {
