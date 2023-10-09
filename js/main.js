@@ -98,10 +98,8 @@ function getSkinsData(name) {
             image: closestImg,
             name: closestSprayName
           };
-          for (let i = 0; i < data.favorites.length; i++) {
-            if (!data.favorites.includes(sprayObj.name)) {
-              data.favorites.push(sprayObj);
-            }
+          if (!isFavorite(sprayObj.name)) {
+            data.favorites.push(sprayObj);
           }
         });
       }
@@ -270,15 +268,13 @@ $favoritesNavButton.addEventListener('click', function (event) {
   viewSwap('favorites-page');
   $searchSection.classList.add('hidden');
   $carouselWrapper.classList.add('hidden');
-
   $ul.replaceChildren();
-
-  for (let i = 0; i < data.favorites.length; i++) {
-    if (data.favorites.length === 0) {
-      $noFavsText.classList.remove('hidden');
-    } else {
-      $noFavsText.classList.add('hidden');
-      $ul.append(renderSprays(data.favorites[i]));
+  if (data.favorites.length === 0) {
+    $noFavsText.classList.remove('hidden');
+  } else {
+    $noFavsText.classList.add('hidden');
+    for (let i = 0; i < data.favorites.length; i++) {
+      $ul.appendChild(renderSprays(data.favorites[i]));
       $carouselWrapper.classList.add('hidden');
       $searchSection.classList.add('hidden');
     }
