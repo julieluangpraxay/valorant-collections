@@ -31,9 +31,9 @@
           <i class="fa-solid fa-bars fa-2xl ham"> </i>
           <div id="sideNav" class="sidenav hidden">
             <i class="fa-solid fa-xmark fa-2xl closebtn"></i>
-            <a class="nav-button" href="#">HOME</a>
+            <a class="nav-button home-button" href="#">HOME</a>
             <a class="nav-button favorite-nav-button" href="#">FAVORITES</a>
-            <a class="nav-button" href="#">SPRAYS</a>
+            <a class="nav-button sprays-nav-button" href="#">SPRAYS</a>
           </div>
         </div>
       </nav>
@@ -84,13 +84,17 @@
       </div>
 
       <div class="row">
-        <div data-view="sprays-page" class="card-container"></div>
+        <div data-view="sprays-page" class="card-container sprays-page"></div>
       </div>
 
       <div data-view="favorites-page" class="favorites-page hidden">
         <div class="row">
-          <img src="images/favoriteslogo.png" alt="favorites logo image" />
+          <div class="favs-logo-container">
+            <img class="favorites-page" src="images/favoriteslogo.png" alt="favorites logo image" />
+          </div>
         </div>
+        <h3 class="no-favs-text hidden">There are currently no favorites. Click the heart icon to add to this list!</h3>
+        <ul></ul>
       </div>
     </main>
     <script src="js/data.js"></script>
