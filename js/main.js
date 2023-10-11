@@ -208,6 +208,10 @@ function renderSprays(spray) {
 
   const $heart = document.createElement('i');
   $heart.classList.add('fa-solid', 'fa-heart', 'fa-2xl', 'image-heart');
+
+  const $deleteHeart = document.createElement('i');
+  $deleteHeart.classList.add('fa-solid', 'fa-heart-circle-minus', 'fa-2xl');
+
   $imgRow.classList.add('img-row');
   $imgWrapper.classList.add('img-wrapper');
   $cardWrapper.classList.add('card-wrapper');
@@ -217,6 +221,7 @@ function renderSprays(spray) {
 
   $cardWrapper.appendChild($imgWrapper);
   $imgWrapper.appendChild($imgRow);
+  $imgRow.appendChild($deleteHeart);
   $imgRow.appendChild($heart);
   $imgWrapper.appendChild($iconImage);
   $cardWrapper.appendChild($textWrapper);
@@ -226,7 +231,6 @@ function renderSprays(spray) {
 }
 
 const $ul = document.querySelector('ul');
-
 const $favoritesPage = document.querySelector('.favorites-page');
 const $spraysPage = document.querySelector('.sprays-page');
 const $favoritesNavButton = document.querySelector('.favorite-nav-button');

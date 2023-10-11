@@ -66,6 +66,7 @@ ul {
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
+  margin: 2rem 10rem;
 }
 
 i {
@@ -218,14 +219,21 @@ body {
 }
 
 .img-row {
-  text-align: right;
-  padding-bottom: 0.6rem;
-  padding-right: 0.4rem;
-  padding-top: 0.5rem;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 1rem 0;
+}
+
+.fa-heart-circle-minus {
+  color: red;
+  font-size: 2rem;
 }
 
 .img-wrapper {
   text-align: right;
+  display: flex;
+  flex-direction: column;
 }
 
 .fa-heart {
