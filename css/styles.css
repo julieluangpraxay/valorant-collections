@@ -219,17 +219,17 @@ body {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .img-row {
-  padding: 0.2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
-.fa-heart-circle-minus:hover {
+.fa-heart-circle-minus {
   color: #c15b75;
-  font-size: 3rem;
-  height: 3rem;
+  height: 0.5rem;
 }
 
 .img-wrapper {

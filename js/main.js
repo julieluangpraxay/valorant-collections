@@ -215,14 +215,8 @@ function renderSprays(spray) {
   $heart.classList.add('fa-solid', 'fa-heart', 'fa-2xl', 'image-heart');
 
   const $deleteHeart = document.createElement('i');
-  $deleteHeart.classList.add(
-    'fa-solid',
-    'fa-heart-circle-minus',
-    'fa-2xl',
-    'grow'
-  );
+  $deleteHeart.classList.add('fa-solid', 'fa-heart-circle-minus', 'fa-2xl');
 
-  // $imgRow.classList.add('img-row');
   $imgColumnHalf.classList.add('column-half');
   $imgWrapper.classList.add('img-wrapper');
   $cardWrapper.classList.add('card-wrapper');
@@ -231,9 +225,6 @@ function renderSprays(spray) {
   $sprayTitle.classList.add('spray-title');
 
   $cardWrapper.appendChild($imgWrapper);
-  // $imgWrapper.appendChild($imgRow);
-  // $imgRow.appendChild($deleteHeart);
-  // $imgRow.appendChild($heart);
   $imgWrapper.appendChild($imgColumnHalf);
   $imgColumnHalf.appendChild($deleteHeart);
   $imgColumnHalf.appendChild($heart);
@@ -298,12 +289,6 @@ $favoritesNavButton.addEventListener('click', function (event) {
     }
   }
 });
-
-// const $deleteButton = document.querySelector('.fa-heart-circle-minus');
-
-// $deleteButton.addEventListener('click', function(event) {
-
-// }
 
 $ul.addEventListener('click', function (event) {
   if (event.target.classList.contains('fa-heart-circle-minus')) {
