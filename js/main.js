@@ -169,14 +169,12 @@ function searchSprays(event) {
         const closestSprayName = cardContainer.lastChild.firstChild.textContent;
 
         if (isFavorite(closestSprayName)) {
-          // Remove from favorites and update heart icon
           data.favorites = data.favorites.filter(
             spray => spray.name !== closestSprayName
           );
           clickedHeart.classList.remove('fa-solid');
           clickedHeart.classList.add('fa-regular');
         } else {
-          // Add to favorites and update heart icon
           data.favorites.push({ image: closestImg, name: closestSprayName });
           clickedHeart.classList.remove('fa-regular');
           clickedHeart.classList.add('fa-solid', 'fa-heart');
@@ -191,12 +189,14 @@ const $mobile = document.querySelector('#sideNav');
 
 $hamburgerMobile.addEventListener('click', function (event) {
   $mobile.classList.remove('hidden');
+  $hamburgerMobile.classList.toggle('hidden');
 });
 
 const $close = document.querySelector('.fa-xmark');
 
 $close.addEventListener('click', function (event) {
   $mobile.classList.add('hidden');
+  $hamburgerMobile.classList.remove('hidden');
 });
 
 function renderSprays(spray) {
