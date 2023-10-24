@@ -162,20 +162,23 @@ function searchSprays(event) {
       $textWrapper.appendChild($sprayTitle);
 
       $heart.addEventListener('click', function (event) {
-        $heart.classList.remove('fa-regular');
-        $heart.classList.add('fa-solid', 'fa-heart');
-
         const clickedHeart = event.target;
         const cardContainer = clickedHeart.closest('.card-wrapper');
         const $imgWrapper = clickedHeart.closest('.img-wrapper');
         const closestImg = $imgWrapper.lastChild.getAttribute('src');
         const closestSprayName = cardContainer.lastChild.firstChild.textContent;
 
-        const sprayObj = {
-          image: closestImg,
-          name: closestSprayName
-        };
-        data.favorites.push(sprayObj);
+        if (isFavorite(closestSprayName)) {
+          data.favorites = data.favorites.filter(
+            spray => spray.name !== closestSprayName
+          );
+          clickedHeart.classList.remove('fa-solid');
+          clickedHeart.classList.add('fa-regular');
+        } else {
+          data.favorites.push({ image: closestImg, name: closestSprayName });
+          clickedHeart.classList.remove('fa-regular');
+          clickedHeart.classList.add('fa-solid', 'fa-heart');
+        }
       });
     }
   }
@@ -186,12 +189,14 @@ const $mobile = document.querySelector('#sideNav');
 
 $hamburgerMobile.addEventListener('click', function (event) {
   $mobile.classList.remove('hidden');
+  $hamburgerMobile.classList.toggle('hidden');
 });
 
 const $close = document.querySelector('.fa-xmark');
 
 $close.addEventListener('click', function (event) {
   $mobile.classList.add('hidden');
+  $hamburgerMobile.classList.remove('hidden');
 });
 
 function renderSprays(spray) {
@@ -200,7 +205,7 @@ function renderSprays(spray) {
   const $textWrapper = document.createElement('div');
   const $sprayTitle = document.createElement('p');
   const $imgWrapper = document.createElement('div');
-  const $imgRow = document.createElement('div');
+  const $imgColumnHalf = document.createElement('div');
 
   $sprayTitle.textContent = spray.name;
   $iconImage.src = spray.image;
@@ -208,7 +213,11 @@ function renderSprays(spray) {
 
   const $heart = document.createElement('i');
   $heart.classList.add('fa-solid', 'fa-heart', 'fa-2xl', 'image-heart');
-  $imgRow.classList.add('img-row');
+
+  const $deleteHeart = document.createElement('i');
+  $deleteHeart.classList.add('fa-solid', 'fa-heart-circle-minus', 'fa-2xl');
+
+  $imgColumnHalf.classList.add('column-half');
   $imgWrapper.classList.add('img-wrapper');
   $cardWrapper.classList.add('card-wrapper');
   $iconImage.classList.add('spray-icon');
@@ -216,8 +225,9 @@ function renderSprays(spray) {
   $sprayTitle.classList.add('spray-title');
 
   $cardWrapper.appendChild($imgWrapper);
-  $imgWrapper.appendChild($imgRow);
-  $imgRow.appendChild($heart);
+  $imgWrapper.appendChild($imgColumnHalf);
+  $imgColumnHalf.appendChild($deleteHeart);
+  $imgColumnHalf.appendChild($heart);
   $imgWrapper.appendChild($iconImage);
   $cardWrapper.appendChild($textWrapper);
   $textWrapper.appendChild($sprayTitle);
@@ -226,7 +236,6 @@ function renderSprays(spray) {
 }
 
 const $ul = document.querySelector('ul');
-
 const $favoritesPage = document.querySelector('.favorites-page');
 const $spraysPage = document.querySelector('.sprays-page');
 const $favoritesNavButton = document.querySelector('.favorite-nav-button');
@@ -277,6 +286,25 @@ $favoritesNavButton.addEventListener('click', function (event) {
       $ul.appendChild(renderSprays(data.favorites[i]));
       $carouselWrapper.classList.add('hidden');
       $searchSection.classList.add('hidden');
+    }
+  }
+});
+
+$ul.addEventListener('click', function (event) {
+  if (event.target.classList.contains('fa-heart-circle-minus')) {
+    const $cardWrapper = event.target.closest('.card-wrapper');
+    const $heart = document.createElement('i');
+
+    $heart.classList.add('fa-regular', 'fa-heart', 'fa-2xl', 'image-heart');
+
+    const sprayName = $cardWrapper.querySelector('.spray-title').textContent;
+
+    data.favorites = data.favorites.filter(spray => spray.name !== sprayName);
+
+    $cardWrapper.remove();
+
+    if (data.favorites.length === 0) {
+      $noFavsText.classList.remove('hidden');
     }
   }
 });
