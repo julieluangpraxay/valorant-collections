@@ -292,16 +292,16 @@ $favoritesNavButton.addEventListener('click', function (event) {
 
 $ul.addEventListener('click', function (event) {
   if (event.target.classList.contains('fa-heart-circle-minus')) {
-    const cardWrapper = event.target.closest('.card-wrapper');
+    const $cardWrapper = event.target.closest('.card-wrapper');
     const $heart = document.createElement('i');
 
     $heart.classList.add('fa-regular', 'fa-heart', 'fa-2xl', 'image-heart');
 
-    const sprayName = cardWrapper.querySelector('.spray-title').textContent;
+    const sprayName = $cardWrapper.querySelector('.spray-title').textContent;
 
     data.favorites = data.favorites.filter(spray => spray.name !== sprayName);
 
-    cardWrapper.remove();
+    $cardWrapper.remove();
 
     if (data.favorites.length === 0) {
       $noFavsText.classList.remove('hidden');
